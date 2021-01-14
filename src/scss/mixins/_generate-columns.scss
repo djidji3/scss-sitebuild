@@ -1,0 +1,17 @@
+/* col--default-1 ... col--default-12 */
+
+
+/* col--desktop-1 ... col--desktop-12 */
+
+@mixin generate-columns {
+    $postfixes: var(col-postfix);
+    $grid-size: var(grid-size);
+    @each $name,
+    $postfix in $postfixes {
+        @for $i from 1 through $grid-size {
+            .#{var(col-classname)}--#{$postfix}-#{$i} {
+                @include set-column-width($postfix, $i);
+            }
+        }
+    }
+}

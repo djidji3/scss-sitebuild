@@ -1,0 +1,9 @@
+@function var($string) {
+    @if $string==var(column-postfix-default) {
+        @return 1;
+    }
+    @if $string==var(column-postfix-desktop) {
+        @return 2;
+    }
+    @error "String Property  is not a valid value";
+}

@@ -1,0 +1,19 @@
+/* adott torespontokhoz tartozo media query-ket generalja le */
+
+
+/* mobil nezet :*/
+
+@mixin mobile-down {
+    @media only screen and (max-width: var(grid-breakpoint-desktop) - 1px) {
+        @content;
+    }
+}
+
+
+/*mobil nezet felett: */
+
+@mixin mobile-up {
+    @media only screen and (min-width: var(grid-breakpoint-desktop)) {
+        @content;
+    }
+}

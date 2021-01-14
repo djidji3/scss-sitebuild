@@ -1,0 +1,13 @@
+    /* oszlopok stilusanak beallitasa */
+    
+    @mixin column-default-style {
+        /* .container > [class^=default] */
+        .#{var(container-classname)}>[class^="#{var(col-classname)}"] {
+            box-sizing: border-box;
+            padding: var(col-padding-default);
+            position: relative;
+            @include mobile-up {
+                padding: var(col-padding-desktop);
+            }
+        }
+    }

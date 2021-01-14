@@ -1,0 +1,16 @@
+@mixin set-column-width() {}
+
+
+/* 
+@mixin set-column-width($viewport, $col-count) {
+    $width: 100% * $col-count / var(grid-size);
+    
+    @if $viewport==var(col-postfix-default) {
+        width: $width;
+    }
+    @else if $viewport==var(col-postfix-desktop) {
+        @include mobile-up {
+            width: $width;
+        }
+    }
+} */

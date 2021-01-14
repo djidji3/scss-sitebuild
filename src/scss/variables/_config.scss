@@ -1,0 +1,34 @@
+$config: ( grid:
+/* a racsrendszer azon elemei,amelyek testreszabhatoak, allithatoak kell legyenek */
+
+( size: 12,
+/* oszlopok szama */
+
+breakpoint: ( mobile: 640px, tablet: 760px, desktop: 960px)),
+/* container elem classneve */
+
+container: ( classname: container-fluid,
+/* container max szelessege */
+
+maxWidth: 1400px,
+/* container paddig erteke a kulonbozo kijelzokon */
+
+padding: ( default: 5px, tablet: 7.5px, ), ),
+/* oszlop elem modosithato jellemzoi */
+
+col: (
+/* oszlop elem class neve */
+
+classname: col, postfix: (
+/* torespontokkent eltero nevet hasznalunk */
+
+mobile: default,
+/* igy fog kinezni: col--default-12 */
+
+desktop: lg,
+/* igy fog kinezni: col--lg-4 */
+
+),
+/* oszlop elem padding ertekei torespontokkent */
+
+padding: ( default: 10px, desktop: 15px, ), ), );
