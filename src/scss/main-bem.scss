@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap");
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+.container--fluid {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    padding: 5px;
+    position: relative;
+    max-width: 1400px;
+}
+
+
+/* .container > [class^=default] */
+
+.container-fluid>[class^="col"] {
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+}
+
+@media only screen and (min-width: 960px) {
+    .container-fluid>[class^="col"] {
+        padding: 15px;
+    }
+}
+
+.nav {
+    &-item {
+        font-family: "Catamaran", helvetica, arial, sans-serif;
+    }
+    &-link {
+        font-family: "Lato", helvetica, arial, sans-serif;
+        &:hover {
+            background-color: rgb(122, 122, 146);
+            color: white;
+        }
+    }
+}
+
+.btn {
+    font-family: "Lato", helvetica, arial, sans-serif;
+}
+
+.btn-outline-light {
+    font-size: x-small;
+}
+
+h3,
+h1,
+h5 {
+    font-family: "Catamaran", helvetica, arial, sans-serif;
+}
+
+p {
+    font-family: "Mulish", helvetica, arial, sans-serif;
+}
+
+.display-4 {
+    font-family: "Catamaran", helvetica, arial, sans-serif;
+}
+
+.phone--img1 {
+    width: 350px;
+    border-radius: 50px;
+}
+
+.phone__inside-img1 {
+    width: 305px;
+    position: relative;
+    top: -615px;
+    left: 3px;
+}
+
+.phone--img2 {
+    width: 350px;
+    border-radius: 50px;
+    /* height: 360px; */
+}
+
+.phone__inside-img2 {
+    width: 305px;
+    position: relative;
+    top: -615px;
+    left: 3px;
+}
+
+.section1 {
+    background-image: url("/bs-sitebuild_img/backgroun-image.jpg");
+    background: linear-gradient(to right, #ff0066 0%, #b42ae2 100%);
+    margin-top: 20px;
+    color: white;
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+    &__container {
+        text-align: center;
+        margin: 40px;
+    }
+    &-btn {
+        margin: 25px;
+        padding: 14px;
+        border: 1px solid white;
+        border-radius: 45px;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+    &__imgdiv {
+        margin: 35px;
+        padding: 5px;
+        max-width: 100%;
+        &__imgclass--img {
+            max-width: 400px;
+        }
+    }
+    &__imgclass {
+        display: flex;
+        justify-content: center;
+        &--img {
+            max-width: 60%;
+            border-radius: 50px;
+        }
+    }
+}
+
+.section2 {
+    background-color: #fcc958;
+    padding-top: 160px;
+    padding-bottom: 110px;
+    &__container {
+        display: flex;
+    }
+    &__container {
+        display: block;
+        text-align: center;
+        margin: 20px;
+    }
+    &__rows {
+        text-align: center;
+        font-size: 4rem;
+        margin: 25px;
+    }
+    &-small {
+        font-size: 2rem;
+    }
+    &__imgcontainer {
+        margin-bottom: 20px;
+    }
+    &__imgcontainer-img {
+        justify-content: center;
+        height: 40px;
+    }
+    &__img-row {
+        justify-content: center;
+        margin: 20px;
+    }
+}
+
+.section3 {
+    &__container {
+        padding: 20px;
+    }
+    &__row1 {
+        text-align: center;
+        font-size: 3rem;
+        &-high {
+            text-align: center;
+            font-size: 3rem;
+        }
+    }
+    &__row2 {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    &__row3-imgdiv {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.section4 {
+    /* background-image: url("/bs-sitebuild_img/bg-cta.jpg");
+  background-position: center; */
+    height: 150;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 150px;
+}
+
+@media screen and (max-width: 992px) {
+    .section4 {
+        max-height: 200px;
+    }
+}
+
+.section5 {
+    z-index: 99;
+}
+
+.image--text {
+    position: relative;
+    top: -1px;
+    left: 53px;
+    z-index: 99;
+}
+
+.picture-row {
+    height: 200px;
+    width: 100%;
+}
+
+footer {
+    font-family: "Mulish", helvetica, arial, sans-serif;
+    text-align: center;
+}
