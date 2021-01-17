@@ -1,8 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap");
+@import "variables/variables";
+@import "mixins/mixins";
+@import "functions/functions";
+@include generate-container();
+@include column-default-style();
+@include set-column-width();
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
 body {
     display: flex;
+    margin: 0;
     flex-direction: column;
     min-width: 100%;
 }
@@ -34,15 +41,92 @@ body {
 }
 
 .nav {
+    display: flex;
+    justify-content: center;
+    &:hover {
+        background-color: $logo-hover-backgroundcolor;
+    }
     &-item {
         font-family: "Catamaran", helvetica, arial, sans-serif;
     }
+    &-logo {
+        text-decoration: none;
+        color: $logo-color;
+        font-size: 1.5rem;
+        &:hover {
+            color: $logo-hover-color;
+            background-color: $logo-hover-backgroundcolor;
+        }
+    }
+    &__div {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        width: 100%;
+        @media screen and (min-width: 992px) {
+            align-items: center;
+        }
+    }
+    &__ul {
+        display: none;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        list-style: none;
+        @media screen and (min-width: 992px) {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+        }
+    }
+    &__ul-li {
+        text-align: center;
+    }
     &-link {
         font-family: "Lato", helvetica, arial, sans-serif;
+        color: $nav-link-color;
+        display: block;
+        line-height: 2rem;
+        padding: 2rem;
+        text-decoration: none;
         &:hover {
-            background-color: rgb(122, 122, 146);
-            color: white;
+            background-color: $nav-link-hover-backgoundcolor;
+            color: $nav-link-hover-color;
         }
+    }
+    &-checkbox {
+        display: none;
+        &:checked {
+            +.nav__ul {
+                display: flex;
+            }
+        }
+    }
+    &-label {
+        align-items: center;
+        margin-top: 15px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        height: 1.5rem;
+        padding: .5rem;
+        width: 3.5rem;
+        border: 1px solid rgb(204, 199, 199);
+        border-radius: 6px;
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+        &:hover {
+            color: $logo-hover-color;
+        }
+    }
+    &-span {
+        background: black;
+        height: 1px;
+        width: 1.5px;
+        display: block;
     }
 }
 
@@ -97,7 +181,7 @@ p {
     background-image: url("/bs-sitebuild_img/backgroun-image.jpg");
     background: linear-gradient(to right, #ff0066 0%, #b42ae2 100%);
     margin-top: 20px;
-    color: white;
+    color: $section1-color;
     @media screen and (min-width: 992px) {
         display: none;
     }
@@ -112,6 +196,11 @@ p {
         border-radius: 45px;
         font-size: 2rem;
         text-decoration: none;
+        &:hover {
+            background-color: $section4-backgroundcolor;
+            border: 1px solid $section4-backgroundcolor;
+            transition: background-color 300ms;
+        }
     }
     &__imgdiv {
         margin: 35px;
@@ -132,7 +221,7 @@ p {
 }
 
 .section2 {
-    background-color: #fcc958;
+    background-color: $section2-backgoundcolor;
     padding-top: 160px;
     padding-bottom: 110px;
     &__container {
@@ -189,20 +278,69 @@ p {
 .section4 {
     /* background-image: url("/bs-sitebuild_img/bg-cta.jpg");
   background-position: center; */
-    height: 150;
     max-width: 100%;
+    font-family: "Catamaran", helvetica, arial, sans-serif;
     height: auto;
-    margin-bottom: 150px;
-}
-
-@media screen and (max-width: 992px) {
-    .section4 {
-        max-height: 200px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+    &-img {
+        max-width: 100%;
+        height: 650px;
+        margin-bottom: 0;
+    }
+    &__text1-class {
+        position: relative;
+        top: -580px;
+        left: 60px;
+        color: $section4-text-color;
+        font-size: 3rem;
+    }
+    &__text2-class {
+        position: relative;
+        top: -640px;
+        left: 60px;
+        color: $section4-text-color;
+        font-size: 3rem;
+    }
+    &-button {
+        position: relative;
+        font-family: "Catamaran", helvetica, arial, sans-serif;
+        top: -700px;
+        left: 150px;
+        color: $section4-text-color;
+        border-radius: 40px;
+        border: 2px solid white;
+        padding: 15px 45px 15px 45px;
+        font-size: 1rem;
+        text-decoration: none;
+        background: none;
+        &:hover {
+            background-color: $section4-backgroundcolor;
+            border: 2px solid $section4-backgroundcolor;
+            transition: background-color 300ms;
+        }
     }
 }
 
 .section5 {
-    z-index: 99;
+    font-family: "Catamaran", helvetica, arial, sans-serif;
+    &-container {
+        background-color: $section2-backgoundcolor;
+        font-size: 3rem;
+        margin-top: 0px;
+        text-align: center;
+    }
+    &-logo {
+        margin: 10px;
+        padding: 10px;
+        background-color: rgb(103, 203, 216, .9);
+        border-radius: 40%;
+        &:hover {
+            background-color: rgba(53, 149, 161, 1);
+        }
+    }
 }
 
 .image--text {
@@ -218,6 +356,11 @@ p {
 }
 
 footer {
-    font-family: "Mulish", helvetica, arial, sans-serif;
+    background-color: rgb(63, 60, 60);
+    font-family: "Mulish", Helvetica, Arial, sans-serif;
     text-align: center;
+    color: $logo-hover-color;
+    padding-top: 30px;
+    margin-bottom: 0px;
+    height: 190px;
 }
